@@ -48,7 +48,7 @@ public class HomeClient {
     private DataReceivedListener dataReceivedListener;
     private ConnectionStateChangedListener connectionStateChangedListener;
     private Timer reconnectTimer;
-    private Workspace workspace;
+    private Workspace workspace =new Workspace();
 
     private HomeClient() {
     }
@@ -319,6 +319,17 @@ public class HomeClient {
         }
         this.publishWorkspace(this.workspace.deleteItem(index));
     }
+    public void cloneItem(String id) throws CloneNotSupportedException {
+        int index = this.workspace.findItem(id);
+        if (index == -1) {
+            Toast.makeText(context, "Item with ID " + id + " not found", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Item clonedItem= (Item) this.workspace.items.get(index).clone();
+        clonedItem.id=String.valueOf(Math.round(Math.random() * 1e9));
+        this.workspace.items.add(index,clonedItem);
+        this.publishWorkspace(this.workspace);
+    }
 
     public Item getItem(String id) {
         int index = this.workspace.findItem(id);
@@ -329,9 +340,12 @@ public class HomeClient {
         return this.workspace.items.get(index);
     }
 
-    public void publish(String topic, String value, boolean retain) {
+    public void publish(String topic, String publishTopic, String value, boolean retain) {
         try {
-            this.mqttClient.publish(topic, value.getBytes(), 0, retain);
+            if(publishTopic!=null&&publishTopic.length()>0)
+                this.mqttClient.publish(publishTopic, value.getBytes(), 0, retain);
+            else
+                this.mqttClient.publish(topic, value.getBytes(), 0, retain);
         } catch (MqttException e) {
             Toast.makeText(context, "Failed to publish: " + e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();

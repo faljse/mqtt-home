@@ -35,6 +35,7 @@ public class SliderWidgetRenderer extends WidgetRenderer {
                 if (fromUser) {
                     HomeClient.getInstance().publish(
                             workspaceSliderWidget.topic,
+                            workspaceSliderWidget.publishTopic,
                             String.valueOf(progress),
                             workspaceSliderWidget.retain
                     );

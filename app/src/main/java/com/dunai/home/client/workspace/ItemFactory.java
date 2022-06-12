@@ -28,7 +28,9 @@ public class ItemFactory {
         return new Section(
                 item.getString("id"),
                 item.getString("title"),
-                item.has("topic") ? item.getString("topic") : null
+                item.has("topic") ? item.getString("topic") : null,
+                item.has("publishTopic") ? item.getString("publishTopic") : null
+
         );
     }
 
@@ -36,6 +38,8 @@ public class ItemFactory {
         String id = item.getString("id");
         String title = item.getString("title");
         String topic = item.getString("topic");
+        String publishTopic = item.getString("publishTopic");
+
         int spanPortrait = item.has("spanPortrait") ? item.getInt("spanPortrait") : item.has("span") ? item.getInt("span") : 12;
         int spanLandscape = item.has("spanLandscape") ? item.getInt("spanLandscape") : spanPortrait;
         boolean retain = !item.has("retain") || item.getBoolean("retain");
@@ -48,6 +52,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,
@@ -62,6 +67,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,
@@ -76,6 +82,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,
@@ -94,6 +101,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,
@@ -107,6 +115,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,
@@ -129,6 +138,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,
@@ -143,6 +153,7 @@ public class ItemFactory {
                         id,
                         title,
                         topic,
+                        publishTopic,
                         retain,
                         showTitle,
                         showLastUpdate,

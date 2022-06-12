@@ -14,6 +14,7 @@ public class SectionEditActivity extends AbstractEditActivity {
     private String itemId;
     private TextView title;
     private TextView topic;
+    private TextView publishTopic;
     private HomeClient client;
 
     @Override
@@ -29,6 +30,8 @@ public class SectionEditActivity extends AbstractEditActivity {
 
         title = findViewById(R.id.sectionRendererEditTitle);
         topic = findViewById(R.id.sectionRendererEditTopic);
+        publishTopic = findViewById(R.id.sectionRendererEditPublishTopic);
+
 
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -72,7 +75,9 @@ public class SectionEditActivity extends AbstractEditActivity {
                     new Section(
                             itemId,
                             title.getText().toString(),
-                            topic.getText().toString().trim().length() > 0 ? topic.getText().toString() : null
+                            topic.getText().toString().trim().length() > 0 ? topic.getText().toString() : null,
+                            publishTopic.getText().toString().trim().length() > 0 ? publishTopic.getText().toString() : null
+
                     )
             );
         } else {
@@ -80,7 +85,9 @@ public class SectionEditActivity extends AbstractEditActivity {
                     new Section(
                             String.valueOf(Math.round(Math.random() * 1e9)),
                             title.getText().toString(),
-                            topic.getText().toString().trim().length() > 0 ? topic.getText().toString() : null
+                            topic.getText().toString().trim().length() > 0 ? topic.getText().toString() : null,
+                            publishTopic.getText().toString().trim().length() > 0 ? publishTopic.getText().toString() : null
+
                     )
             );
         }

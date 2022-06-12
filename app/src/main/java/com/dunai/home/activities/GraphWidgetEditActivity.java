@@ -26,8 +26,8 @@ public class GraphWidgetEditActivity extends AbstractWidgetEditActivity {
     }
 
     @Override
-    protected Widget construct(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
-        return new GraphWidget(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
+    protected Widget construct(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
+        return new GraphWidget(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
     }
 
     @Override

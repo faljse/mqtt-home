@@ -43,6 +43,7 @@ public class ButtonWidgetRenderer extends WidgetRenderer {
 
             button.setOnClickListener(v -> HomeClient.getInstance().publish(
                     workspaceButtonWidget.topic,
+                    workspaceButtonWidget.publishTopic,
                     kv.getValue(),
                     workspaceButtonWidget.retain
             ));

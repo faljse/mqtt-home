@@ -38,6 +38,7 @@ public class SwitchWidgetRenderer extends WidgetRenderer {
 
         this.button.setOnClickListener(v -> HomeClient.getInstance().publish(
                 workspaceSwitchWidget.topic,
+                workspaceSwitchWidget.publishTopic,
                 isChecked ? workspaceSwitchWidget.offValue : workspaceSwitchWidget.onValue,
                 workspaceSwitchWidget.retain
         ));

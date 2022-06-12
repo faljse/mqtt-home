@@ -24,6 +24,7 @@ public abstract class AbstractWidgetEditActivity extends AbstractEditActivity {
     private String itemId;
     private TextView title;
     private TextView topic;
+    private TextView publishTopic;
     private CheckBox retain;
     private SeekBar spanPortrait;
     private SeekBar spanLandscape;
@@ -37,7 +38,7 @@ public abstract class AbstractWidgetEditActivity extends AbstractEditActivity {
 
     protected abstract List<TextView> getRequiredFields();
 
-    protected abstract Widget construct(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor);
+    protected abstract Widget construct(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor);
 
     protected boolean isRetainEditable() {
         return true;
@@ -56,6 +57,8 @@ public abstract class AbstractWidgetEditActivity extends AbstractEditActivity {
 
         title = findViewById(R.id.rendererEditTitle);
         topic = findViewById(R.id.rendererEditTopic);
+        publishTopic = findViewById(R.id.rendererEditPublishTopic);
+
         retain = findViewById(R.id.rendererEditRetain);
         if (!isRetainEditable()) {
             retain.setVisibility(View.GONE);
@@ -77,6 +80,7 @@ public abstract class AbstractWidgetEditActivity extends AbstractEditActivity {
             }
             title.setText(item.title);
             topic.setText(item.topic);
+            publishTopic.setText(item.publishTopic);
             if (isRetainEditable()) {
                 retain.setChecked(item.retain);
             }
@@ -100,6 +104,7 @@ public abstract class AbstractWidgetEditActivity extends AbstractEditActivity {
                     itemId,
                     title.getText().toString(),
                     topic.getText().toString(),
+                    publishTopic.getText().toString(),
                     isRetainEditable() && retain.isChecked(),
                     showTitle.isChecked(),
                     showLastUpdate.isChecked(),
@@ -112,6 +117,7 @@ public abstract class AbstractWidgetEditActivity extends AbstractEditActivity {
                     String.valueOf(Math.round(Math.random() * 1e9)),
                     title.getText().toString(),
                     topic.getText().toString(),
+                    publishTopic.getText().toString(),
                     isRetainEditable() && retain.isChecked(),
                     showTitle.isChecked(),
                     showLastUpdate.isChecked(),

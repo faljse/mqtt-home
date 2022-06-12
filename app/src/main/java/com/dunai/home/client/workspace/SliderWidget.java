@@ -10,8 +10,8 @@ public class SliderWidget extends Widget {
     public int maxValue;
     public int step;
 
-    public SliderWidget(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, int minValue, int maxValue, int step) {
-        super(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
+    public SliderWidget(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, int minValue, int maxValue, int step) {
+        super(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
         this.minValue = minValue;
         this.maxValue = maxValue;
         this.step = step;

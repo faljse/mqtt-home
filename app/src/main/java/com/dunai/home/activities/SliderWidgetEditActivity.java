@@ -31,9 +31,9 @@ public class SliderWidgetEditActivity extends AbstractWidgetEditActivity {
     }
 
     @Override
-    protected Widget construct(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
+    protected Widget construct(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
         return new SliderWidget(
-                id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor,
+                id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor,
                 Integer.parseInt(minValue.getText().toString()), Integer.parseInt(maxValue.getText().toString()), Integer.parseInt(step.getText().toString())
         );
     }

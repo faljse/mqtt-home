@@ -9,8 +9,8 @@ public class TextWidget extends Widget {
     public String prefix;
     public String suffix;
 
-    public TextWidget(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, String prefix, String suffix) {
-        super(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
+    public TextWidget(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, String prefix, String suffix) {
+        super(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
         this.prefix = prefix;
         this.suffix = suffix;
     }

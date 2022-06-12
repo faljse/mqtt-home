@@ -32,8 +32,8 @@ public class ColorWidgetEditActivity extends AbstractWidgetEditActivity {
     }
 
     @Override
-    protected Widget construct(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
-        return new ColorWidget(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor, "HTML", alpha.isChecked()); // TODO: format arg
+    protected Widget construct(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
+        return new ColorWidget(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor, "HTML", alpha.isChecked()); // TODO: format arg
     }
 
     @Override

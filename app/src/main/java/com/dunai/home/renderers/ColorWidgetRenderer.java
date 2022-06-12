@@ -64,6 +64,7 @@ public class ColorWidgetRenderer extends WidgetRenderer {
 //                            }
                     HomeClient.getInstance().publish(
                             workspaceColorWidget.topic,
+                            workspaceColorWidget.publishTopic,
                             formatColor(selectedColor),
                             workspaceColorWidget.retain
                     );

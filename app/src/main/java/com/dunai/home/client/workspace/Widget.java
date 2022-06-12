@@ -11,8 +11,8 @@ public abstract class Widget extends Item {
     public int spanPortrait;
     public int spanLandscape;
 
-    public Widget(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
-        super(id, title, topic);
+    public Widget(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor) {
+        super(id, title, topic, publishTopic);
         this.retain = retain;
         this.showTitle = showTitle;
         this.showLastUpdate = showLastUpdate;

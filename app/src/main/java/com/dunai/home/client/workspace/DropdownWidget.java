@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class DropdownWidget extends Widget {
     public ArrayList<KeyValue> keyValues;
 
-    public DropdownWidget(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, ArrayList<KeyValue> keyValues) {
-        super(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
+    public DropdownWidget(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, ArrayList<KeyValue> keyValues) {
+        super(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
         this.keyValues = keyValues;
     }
 

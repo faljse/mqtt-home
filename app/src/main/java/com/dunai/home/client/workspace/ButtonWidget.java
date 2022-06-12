@@ -12,8 +12,8 @@ public class ButtonWidget extends Widget {
     public ArrayList<KeyValue> keyValues;
     public Orientation orientation;
 
-    public ButtonWidget(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, ArrayList<KeyValue> keyValues, Orientation orientation) {
-        super(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
+    public ButtonWidget(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, ArrayList<KeyValue> keyValues, Orientation orientation) {
+        super(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
         this.keyValues = keyValues;
         this.orientation = orientation;
     }

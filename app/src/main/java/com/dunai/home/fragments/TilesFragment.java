@@ -173,6 +173,8 @@ public class TilesFragment extends Fragment {
         menu.add(groupId, 1, 0, R.string.action_move_forth);
         menu.add(groupId, 2, 0, R.string.action_edit);
         menu.add(groupId, 3, 0, R.string.action_delete);
+        menu.add(groupId, 4, 0, "Clone");
+
         super.onCreateContextMenu(menu, v, menuInfo);
     }
 
@@ -227,6 +229,14 @@ public class TilesFragment extends Fragment {
                         .setPositiveButton("Yes", (dialog, which) -> client.deleteItem(workspaceItemId))
                         .setNegativeButton("No", null)
                         .show();
+                break;
+
+            case 4:
+                try {
+                    client.cloneItem(workspaceItemId);
+                } catch (CloneNotSupportedException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
 

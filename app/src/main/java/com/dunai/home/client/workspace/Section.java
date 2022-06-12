@@ -8,8 +8,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Section extends Item {
-    public Section(String id, String title, @Nullable String topic) {
-        super(id, title, topic);
+    public Section(String id, String title, @Nullable String topic, @Nullable String publishTopic) {
+        super(id, title, topic, publishTopic);
     }
 
     public JSONObject serialize() {

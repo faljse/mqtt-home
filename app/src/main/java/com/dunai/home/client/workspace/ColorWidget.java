@@ -9,8 +9,8 @@ public class ColorWidget extends Widget {
     public ColorFormat format;
     public boolean alpha;
 
-    public ColorWidget(String id, String title, String topic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, String format, boolean alpha) {
-        super(id, title, topic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
+    public ColorWidget(String id, String title, String topic, String publishTopic, boolean retain, boolean showTitle, boolean showLastUpdate, int spanPortrait, int spanLandscape, String bgColor, String format, boolean alpha) {
+        super(id, title, topic, publishTopic, retain, showTitle, showLastUpdate, spanPortrait, spanLandscape, bgColor);
         this.format = ColorFormat.valueOf(format);
         this.alpha = alpha;
     }

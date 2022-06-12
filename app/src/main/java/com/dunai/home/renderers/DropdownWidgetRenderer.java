@@ -48,6 +48,7 @@ public class DropdownWidgetRenderer extends WidgetRenderer {
                 }
                 HomeClient.getInstance().publish(
                         workspaceDropdownWidget.topic,
+                        workspaceDropdownWidget.publishTopic,
                         workspaceDropdownWidget.keyValues.get(position).getValue(),
                         workspaceDropdownWidget.retain
                 );
